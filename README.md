@@ -15,3 +15,7 @@ A graph is bipartite if and only if it has no odd cycle. Thus, to verify if a gi
 ### Strongly Connected Check
 
 > Pending to detail...
+
+### Maximum Spanning Tree
+
+> Pending to detail...

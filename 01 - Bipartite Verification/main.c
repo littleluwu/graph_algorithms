@@ -4,13 +4,13 @@
 /*------------------|
 |       List        |
 |------------------*/
-typedef struct _node {
-    struct _node *next;    
+typedef struct _list_node {
+    struct _list_node *next;    
     int data;
-} node;
+} list_node;
 
 typedef struct _list {
-    node* first;
+    list_node* first;
 } list;
 
 void init(list* l){
@@ -23,17 +23,17 @@ int empty(list* l){
 
 void destroy(list* l){
     while(!empty(l)){
-        node *aux = l->first;
+        list_node *aux = l->first;
         l->first = aux->next;
         free(aux);
     }
 }
 
 void insert(list* l, int i){
-    node *n = (node*)malloc(sizeof(node));
+    list_node *n = (list_node*)malloc(sizeof(list_node));
     n->data = i;
 
-    node *aux = l->first;
+    list_node *aux = l->first;
     l->first = n;
     n->next = aux;
 }
@@ -47,7 +47,7 @@ void DFS_AUX(list* l, int i, int *visited,int *color, int paint, int *f_bipart){
     visited[i] = 1;
     color[i] = paint;
 
-    node* n = l[i].first;
+    list_node* n = l[i].first;
     while(n != NULL){
         if (visited[n->data] == 0) DFS_AUX(l,n->data,visited,color,-paint,f_bipart);
         else if (visited[n->data] == 1 && color[n->data] == color[i]) *f_bipart = 0;
