@@ -19,3 +19,7 @@ A graph is bipartite if and only if it has no odd cycle. Thus, to verify if a gi
 ### Maximum Spanning Tree
 
 > Pending to detail...
+
+### Shortest Path
+
+> Pending to detail...
